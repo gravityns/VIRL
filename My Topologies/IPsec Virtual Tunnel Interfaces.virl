@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<topology xmlns="http://www.cisco.com/VIRL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" schemaVersion="0.9" xsi:schemaLocation="http://www.cisco.com/VIRL https://raw.github.com/CiscoVIRL/schema/v0.9/virl.xsd">
+    <node name="csr1000v-1" type="SIMPLE" subtype="CSR1000v" location="268,215">
+        <extensions>
+            <entry key="Auto-generate config" type="Boolean">false</entry>
+        </extensions>
+        <interface id="0" name="GigabitEthernet2"/>
+        <interface id="1" name="GigabitEthernet3"/>
+        <interface id="2" name="GigabitEthernet4"/>
+    </node>
+    <node name="csr1000v-2" type="SIMPLE" subtype="CSR1000v" location="916,39">
+        <extensions>
+            <entry key="Auto-generate config" type="Boolean">false</entry>
+        </extensions>
+        <interface id="0" name="GigabitEthernet2"/>
+        <interface id="1" name="GigabitEthernet3"/>
+        <interface id="2" name="GigabitEthernet4"/>
+    </node>
+    <node name="unmanagedswitch-1" type="SIMPLE" subtype="Unmanaged Switch" location="615,244">
+        <interface id="0" name="link1"/>
+        <interface id="1" name="link2"/>
+    </node>
+    <node name="server-1" type="SIMPLE" subtype="server" location="117,249">
+        <interface id="0" name="eth1"/>
+    </node>
+    <node name="server-2" type="SIMPLE" subtype="server" location="1145,284">
+        <interface id="0" name="eth1"/>
+    </node>
+    <node name="win7-1" type="SIMPLE" subtype="win7" location="139,80" vmImage="Win7-SP1 [6602106a-9d22-4072-9190-d17441711e78]" vmFlavor="Windows7 [ee589e02-5ccf-4690-8252-dfe2d3d732bd]">
+        <interface id="0" name="eth1"/>
+    </node>
+    <node name="win7-2" type="SIMPLE" subtype="win7" location="1167,65" vmImage="Win7-SP1 [6602106a-9d22-4072-9190-d17441711e78]" vmFlavor="Windows7 [ee589e02-5ccf-4690-8252-dfe2d3d732bd]">
+        <interface id="0" name="eth1"/>
+    </node>
+    <connection dst="/virl:topology/virl:node[3]/virl:interface[1]" src="/virl:topology/virl:node[1]/virl:interface[1]"/>
+    <connection dst="/virl:topology/virl:node[3]/virl:interface[2]" src="/virl:topology/virl:node[2]/virl:interface[1]"/>
+    <connection dst="/virl:topology/virl:node[1]/virl:interface[2]" src="/virl:topology/virl:node[4]/virl:interface[1]"/>
+    <connection dst="/virl:topology/virl:node[1]/virl:interface[3]" src="/virl:topology/virl:node[6]/virl:interface[1]"/>
+    <connection dst="/virl:topology/virl:node[2]/virl:interface[2]" src="/virl:topology/virl:node[7]/virl:interface[1]"/>
+    <connection dst="/virl:topology/virl:node[2]/virl:interface[3]" src="/virl:topology/virl:node[5]/virl:interface[1]"/>
+</topology>
